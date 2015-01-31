@@ -121,8 +121,8 @@
 	ul.contact li
 	{
 		display: inline-block;
-		padding: 0em 0.30em;
-		font-size: 2em;
+		padding: 0em 1em;
+		font-size: 3em;
 	}
 	
 	ul.contact li span
@@ -214,21 +214,15 @@
 	.boxB,
 	.boxC
 	{
-		width: 384px;
+		width: 90%;
+		margin: 0em auto;
 	}
 
-	.boxA,
-	.boxB
+	.boxA p,
+	.boxB p,
+	.boxC p
 	{
-		/* float: left; */
-		/* margin-right: 20px; */
-		margin: 0em auto;
-	}
-	
-	.boxC
-	{
-		/* float: right; */
-		margin: 0em auto;
+		font-size:1.3em;
 	}
 
 /*********************************************************************************/
@@ -263,12 +257,13 @@
 	
 	.title h2
 	{
-		font-size: 5.4em;
+		font-size: 4.1em;
+		margin-bottom: 0.5em;
 	}
 	
 	.title .byline
 	{
-		font-size: 2.6em;
+		font-size: 2em;
 		color: rgba(255,255,255,0.60);
 	}
 
@@ -384,7 +379,7 @@
 	
 	#banner .title h2
 	{
-		font-size: 8em;
+		font-size: 6em;
 	}
 	
 	#banner .title .byline
@@ -504,7 +499,7 @@
 		display: block;
 		padding: 1em 0em;
 		color: rgba(0,0,0,1);
-		font-size: 4em;
+		font-size: 3em;
 	}
 	
 	#three-column .title h2
