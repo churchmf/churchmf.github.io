@@ -142,8 +142,16 @@
 <script>
 	let currentSlide = 0;
 	let slideInterval;
+	let videoInteracted = false;
+
+	window.addEventListener('blur', () => {
+		if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+			videoInteracted = true;
+		}
+	});
 
 	function moveSlide(direction) {
+		videoInteracted = false;
 		const slidesContainer = document.querySelector('.carousel-slides');
 		const totalSlides = document.querySelectorAll('.carousel-slide').length;
 		currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
@@ -155,6 +163,9 @@
 	function resetInterval() {
 		clearInterval(slideInterval);
 		slideInterval = setInterval(() => {
+			if (videoInteracted || (document.activeElement && document.activeElement.tagName === 'IFRAME')) {
+				return;
+			}
 			const slidesContainer = document.querySelector('.carousel-slides');
 			const totalSlides = document.querySelectorAll('.carousel-slide').length;
 			currentSlide = (currentSlide + 1 + totalSlides) % totalSlides;
