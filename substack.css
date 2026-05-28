@@ -1,0 +1,150 @@
+/* Writing Section Light Theme Styling */
+#writing {
+	color: rgba(0, 0, 0, 0.6);
+}
+
+#writing .title h2 {
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.8) !important;
+}
+
+#writing .title .byline {
+	color: rgba(0, 0, 0, 0.5) !important;
+}
+
+#substack-card-wrapper {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+#substack-loading {
+	text-align: center;
+	padding: 3em;
+	background: #fff;
+	border-radius: 12px;
+	border: 1px solid #e1e8ed;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+	box-sizing: border-box;
+}
+
+#substack-container a {
+	display: flex;
+	flex-direction: row;
+	text-decoration: none;
+	background: #fff;
+	border-radius: 12px;
+	overflow: hidden;
+	border: 1px solid #e1e8ed;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+	transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+	color: inherit;
+	box-sizing: border-box;
+}
+
+#substack-container a:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+	border-color: #ff6719;
+}
+
+.substack-image {
+	flex: 1;
+	min-width: 250px;
+	background-size: cover;
+	background-position: center;
+	min-height: 220px;
+}
+
+.substack-content {
+	flex: 2;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+}
+
+.substack-badge {
+	display: inline-block;
+	background: rgba(255, 103, 25, 0.1);
+	color: #ff6719;
+	padding: 4px 12px;
+	border-radius: 20px;
+	font-size: 0.8em;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 12px;
+	letter-spacing: 0.5px;
+	font-family: 'Didact Gothic', sans-serif;
+}
+
+.substack-title {
+	margin: 0 0 12px 0;
+	color: #333;
+	font-size: 1.6em;
+	font-weight: bold;
+	line-height: 1.3;
+	text-transform: none;
+	font-family: 'Didact Gothic', sans-serif;
+}
+
+.substack-snippet {
+	margin: 0 0 20px 0;
+	color: #666;
+	font-size: 1.05em;
+	line-height: 1.6;
+}
+
+.substack-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid #f0f0f0;
+	padding-top: 15px;
+	margin-top: auto;
+}
+
+.substack-date {
+	color: #999;
+	font-size: 0.9em;
+}
+
+.substack-readmore {
+	color: #ff6719;
+	font-weight: bold;
+	font-size: 0.95em;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	transition: transform 0.2s ease;
+}
+
+#substack-container a:hover .substack-readmore {
+	transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+	#substack-card-wrapper {
+		padding: 0 15px;
+	}
+	#substack-loading {
+		padding: 2em 1em;
+	}
+	#substack-container a {
+		flex-direction: column;
+	}
+	.substack-image {
+		width: 100%;
+		min-width: 0;
+		height: 200px;
+		min-height: 200px;
+	}
+	.substack-content {
+		padding: 20px;
+	}
+	.substack-title {
+		font-size: 1.4em;
+	}
+}

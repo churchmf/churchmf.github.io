@@ -12,6 +12,7 @@
 <link media='only screen and (max-width: 1200px)' href="default.small.css" rel="stylesheet" type="text/css" media="all" />
 <link media='only screen and (max-device-width: 480px)' href="default.tiny.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link href="substack.css" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 <body>
@@ -161,42 +162,28 @@
 	</div>
 </div>
 
-<script>
-	let currentSlide = 0;
-	let slideInterval;
-	let videoInteracted = false;
+<script src="carousel.js"></script>
 
-	window.addEventListener('blur', () => {
-		if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
-			videoInteracted = true;
-		}
-	});
-
-	function moveSlide(direction) {
-		videoInteracted = false;
-		const slidesContainer = document.querySelector('.carousel-slides');
-		const totalSlides = document.querySelectorAll('.carousel-slide').length;
-		currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-		slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+<!-- Substack Latest Post Section -->
+<div id="writing" style="background: #fafafa; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 6em 0;">
+	<div class="container">
+		<div class="title" style="text-align: center; margin-bottom: 3.5em;">
+			<h2>Latest Writing</h2>
+			<span class="byline">Thoughts on software engineering, technology, and leadership</span>
+		</div>
 		
-		resetInterval();
-	}
-
-	function resetInterval() {
-		clearInterval(slideInterval);
-		slideInterval = setInterval(() => {
-			if (videoInteracted || (document.activeElement && document.activeElement.tagName === 'IFRAME')) {
-				return;
-			}
-			const slidesContainer = document.querySelector('.carousel-slides');
-			const totalSlides = document.querySelectorAll('.carousel-slide').length;
-			currentSlide = (currentSlide + 1 + totalSlides) % totalSlides;
-			slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-		}, 10000);
-	}
-
-	resetInterval();
-</script>
+		<div id="substack-card-wrapper">
+			<!-- Loading state / Fallback -->
+			<div id="substack-loading">
+				<i class="fa fa-spinner fa-spin" style="font-size: 2.5em; margin-bottom: 15px; display: block; color: #ff6719;"></i>
+				<p style="color: #666; font-size: 1.1em; margin: 0;">Loading latest post from Substack...</p>
+			</div>
+			
+			<div id="substack-container"></div>
+		</div>
+	</div>
+</div>
+<script src="substack.js"></script>
 
 <div id="footer">
 	<div class="container">
@@ -206,6 +193,7 @@
 		<ul class="contact">
 			<li><a target="_blank" href="mailto:churchmf@gmail.com" class="fa fa-envelope-o"><span>Email</span></a></li>
 			<li><a target="_blank" href="https://www.linkedin.com/in/churchmf" class="fa fa-linkedin"><span>LinkedIn</span></a></li>
+			<li><a target="_blank" href="https://churchmf.substack.com" class="fa fa-rss"><span>Substack</span></a></li>
 		</ul>
 	</div>
 </div>
